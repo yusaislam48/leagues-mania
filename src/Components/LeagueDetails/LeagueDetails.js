@@ -15,8 +15,8 @@ const LeagueDetails = () => {
         .then(data => setLeague(data.leagues[0]))
     }, [leagueId]);
 
-    // strSport, intFormedYear, strGender, strCountry, strFacebook, strTwitter, strYoutube,
-    const {strLeague,  strBadge} = league;
+    // strSport, intFormedYear, , strCountry, strFacebook, strTwitter, strYoutube,
+    const {strLeague, strGender,  strBadge} = league;
 
 
     return (
