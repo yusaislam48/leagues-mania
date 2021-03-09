@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import './LeagueDetails.css';
 
 const LeagueDetails = () => {
     const {leagueId} = useParams();
@@ -18,12 +19,18 @@ const LeagueDetails = () => {
 
     return (
         <div>
-            <h1>LeagueDetails here: {strLeague}</h1>
-            {
-                strGender === "Female"
-                ?<p>Female</p>
-                :<p>Male</p>
-            }
+            <div className='cover-img mb-5 d-flex justify-content-center align-items-center'>
+                <img className='thumb-img img-fluid' src={strBadge} alt=""/>
+            </div>
+
+            <div className="container">
+                <h1>LeagueDetails here: {strLeague}</h1>
+                    {
+                        strGender === "Female"
+                        ?<p>Female</p>
+                        :<p>Male</p>
+                    }
+            </div>
         </div>
     );
 };

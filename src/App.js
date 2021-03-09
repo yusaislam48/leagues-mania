@@ -6,10 +6,12 @@ import './App.css';import {
 } from "react-router-dom";
 import Home from './Components/Home/Home';
 import LeagueDetails from './Components/LeagueDetails/LeagueDetails';
+import NavBar from './Components/NavBar/NavBar';
 
 function App() {
   return (
     <div className="App">
+      <NavBar></NavBar>
       <Router>
         <Switch>
           <Route exact path="/">
