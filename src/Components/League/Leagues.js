@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LeagueCard from '../LeagueCard/LeagueCard';
 
-const League = (props) => {
+const Leagues = (props) => {
     const {idLeague} = props.league;
     const [league, setLeague] = useState({});
     useEffect(()=>{
@@ -12,10 +12,12 @@ const League = (props) => {
     }, [idLeague]);
 
     return (
-        <div className="col mb-4">
-            <LeagueCard cardDetails={props.league} leagueDetails={league}></LeagueCard>
+        <div>
+            <div className="col mb-4">
+                <LeagueCard cardDetails={props.league} leagueDetails={league}></LeagueCard>
+            </div>
         </div>
     );
 };
 
-export default League;
+export default Leagues;
