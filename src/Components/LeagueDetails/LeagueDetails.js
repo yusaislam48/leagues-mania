@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import LeagueDetailsCard from '../LeagueDetailsCard/LeagueDetailsCard';
 import './LeagueDetails.css';
 
 const LeagueDetails = () => {
@@ -14,7 +15,8 @@ const LeagueDetails = () => {
         .then(data => setLeague(data.leagues[0]))
     }, [leagueId]);
 
-    const {strLeague, strSport, intFormedYear, strGender, strCountry, strFacebook, strTwitter, strYoutube, strBadge} = league;
+    // strSport, intFormedYear, strGender, strCountry, strFacebook, strTwitter, strYoutube,
+    const {strLeague,  strBadge} = league;
 
 
     return (
@@ -30,7 +32,10 @@ const LeagueDetails = () => {
                         ?<p>Female</p>
                         :<p>Male</p>
                     }
+
+                    <LeagueDetailsCard strGender={strGender}></LeagueDetailsCard>
             </div>
+
         </div>
     );
 };
