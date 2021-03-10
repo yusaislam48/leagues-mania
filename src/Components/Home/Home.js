@@ -18,7 +18,7 @@ const Home = () => {
                 <h1 className='text-center cover-text fs-1'>Leagues Mania</h1>
             </div>
             <div className='container'>
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-3 g-4 mb-5">
                     {
                         newLeagues.map(league => <Leagues key={league.idLeague} league={league}></Leagues>)
                     }

@@ -20,7 +20,6 @@ const LeagueDetails = () => {
 
     // strSport, intFormedYear, , strCountry, strFacebook, strTwitter, strYoutube,
     const {strBadge, strYoutube, strTwitter, strFacebook} = league;
-    console.log(league.strYoutube);
 
 
     return (

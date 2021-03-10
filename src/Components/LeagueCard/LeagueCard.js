@@ -17,7 +17,7 @@ const LeagueCard = (props) => {
 
     return (
         <div >
-            <div className="card h-100">
+            <div onClick={()=>exploreBtnHandler(idLeague)} className="card h-100">
                 <img src={strBadge} className="card-img-top strBadge img-fluid strBadge" alt={strLeague} />
                 <div className="card-body">
                     <h3 className="card-title">{strLeague}</h3>
