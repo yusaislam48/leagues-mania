@@ -2,6 +2,8 @@ import { Button } from '@material-ui/core';
 import React from 'react';
 import { useHistory } from 'react-router';
 import './LeagueCard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const LeagueCard = (props) => {
     
@@ -20,7 +22,7 @@ const LeagueCard = (props) => {
                 <div className="card-body">
                     <h3 className="card-title">{strLeague}</h3>
                     <h5 className="card-text">Sports Details: {strSport}</h5><br/>
-                    <Button onClick={()=>exploreBtnHandler(idLeague)} variant="contained" color="secondary">Explore</Button>
+                    <Button onClick={()=>exploreBtnHandler(idLeague)} variant="contained" color="secondary"><span>Explore <FontAwesomeIcon icon={faArrowRight} /></span></Button>
                 </div>
             </div>
         </div>

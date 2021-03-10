@@ -1,86 +1,39 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
-import malePhoto from '../../Images/Photo/male.png';
-import feMalePhoto from '../../Images/Photo/female.png';
+import malePhoto from '../../Images/Photo/male.png'
+import feMalePhoto from '../../Images/Photo/female.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbtack, faFlag, faVolleyballBall, faMars } from '@fortawesome/free-solid-svg-icons'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  content: {
-    flex: '1 0 auto',
-  },
-  cover: {
-    width: 151,
-  },
-  controls: {
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-  },
-  playIcon: {
-    height: 38,
-    width: 38,
-  },
-}));
 
-export default function LeagueDetailsCard(props) {
-  const classes = useStyles();
-  const theme = useTheme();
-
-  const {strGender} = props;
-  console.log(strGender);
-
+const LeagueDetailsCard = (props) => {
+  const {strLeague, strGender, strSport, intFormedYear, strCountry} = props.league;
   return (
-    <Card className={classes.root}>
-      <div className={classes.details}>
-        <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-            Live From Space
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Mac Miller
-          </Typography>
-        </CardContent>
-        <div className={classes.controls}>
-          <IconButton aria-label="previous">
-            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-          </IconButton>
+      <div className="card mb-3 p-2 bg-warning" style={{maxWidth: "100%", backgroundColor:"white", border:""}}>
+        <div className="row g-0">
+
+          <div className="col-md-7">
+            <div className="card-body">
+              <h2 style={{color:"white"}} className="card-title">{strLeague}</h2><br/>
+              <p style={{fontWeight:"500"}} className="card-text"><FontAwesomeIcon icon={faThumbtack} /> Founded: {intFormedYear}</p>
+              <p style={{fontWeight:"500"}}  className="card-text"><FontAwesomeIcon icon={faFlag} /> Country: {strCountry}</p>
+              <p style={{fontWeight:"500"}}  className="card-text"><FontAwesomeIcon icon={faVolleyballBall} /> Sports type: {strSport}</p>
+              <p style={{fontWeight:"500"}}  className="card-text"><FontAwesomeIcon icon={faMars} /> Gender: {strGender}</p>
+            </div>
+          </div>
+
+          {
+              strGender === "Female"
+                ?<div className="col-md-5">
+                  <img style={{width:"100%"}} src={feMalePhoto} alt="..."/>
+                </div>
+                :<div className="col-md-5">
+                  <img style={{width:"100%"}} src={malePhoto} alt="..."/>
+                </div>
+          }
+
         </div>
       </div>
-        {
-            strGender === "Female"
-            ?<CardMedia
-            className={classes.cover}
-            image={feMalePhoto}
-            title="Live from space album cover"
-            />
-            :<CardMedia
-            className={classes.cover}
-            image={malePhoto}
-            title="Live from space album cover"
-            />
-        }
-      
-    </Card>
   );
-}
+};
+
+export default LeagueDetailsCard;
