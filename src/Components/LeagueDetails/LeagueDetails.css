@@ -4,3 +4,6 @@
 .socialIcon img{
     width: 60px;
 }
+.socialIcon img:hover{
+    cursor: pointer;
+}
