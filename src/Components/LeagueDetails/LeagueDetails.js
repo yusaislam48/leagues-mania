@@ -38,9 +38,9 @@ const LeagueDetails = () => {
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat mollitia magni optio saepe incidunt illum expedita itaque minus nam corporis ducimus excepturi vel aperiam inventore hic quis placeat nihil blanditiis quibusdam, perspiciatis porro fugiat culpa laborum. Velit, earum mollitia! Aliquam tenetur at ab tempora voluptatum perspiciatis, asperiores temporibus quae aut adipisci error laboriosam debitis corporis ducimus sequi? Fuga, iste consectetur.</p>
                 </div><br/>
                 <div className="text-center socialIcon mb-5">
-                    <a href={strTwitter} target="_blank"><img src={twitterLogo} alt=""/></a>
-                    <a href={strFacebook} target="_blank"><img src={facebookLogo} alt=""/></a>
-                    <a href={strYoutube} target="_blank"><img src={youtubeLogo} alt=""/></a>
+                    <a href={strTwitter} target="_blank" rel="noreferrer"><img src={twitterLogo} alt=""/></a>
+                    <a href={strFacebook} target="_blank" rel="noreferrer"><img src={facebookLogo} alt=""/></a>
+                    <a href={strYoutube} target="_blank" rel="noreferrer"><img src={youtubeLogo} alt=""/></a>
                 </div>
 
             </div>
