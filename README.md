@@ -2,7 +2,7 @@
 
 Project Live Link: [Visit Leagues Mania](https://leaguesmania.netlify.app).
 
-## Core Featuures
+## Core Features
 
     *Showing the league name in the home page.
     *You can explore the all league by click them.
