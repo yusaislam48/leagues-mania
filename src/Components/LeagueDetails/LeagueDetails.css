@@ -1,9 +1,10 @@
 .thumb-img{
     width: 200px;
 }
-.socialIcon img{
-    width: 60px;
+.socialIcon h1{
+    margin-right: 15px;
 }
-.socialIcon img:hover{
+.socialIcon h1:hover{
     cursor: pointer;
+    font-size: 55px;
 }

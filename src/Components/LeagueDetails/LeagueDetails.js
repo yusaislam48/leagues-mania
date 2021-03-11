@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import LeagueDetailsCard from '../LeagueDetailsCard/LeagueDetailsCard';
 import './LeagueDetails.css';
-import facebookLogo from '../../Images/Icon/Facebook.png';
-import twitterLogo from '../../Images/Icon/Twitter.png';
-import youtubeLogo from '../../Images/Icon/YouTube.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faTwitterSquare, faYoutube } from '@fortawesome/free-brands-svg-icons'
+
 
 const LeagueDetails = () => {
     const {leagueId} = useParams();
@@ -19,12 +19,21 @@ const LeagueDetails = () => {
     }, [leagueId]);
 
     // strSport, intFormedYear, , strCountry, strFacebook, strTwitter, strYoutube,
-    const {strBadge, strYoutube, strTwitter, strFacebook} = league;
+    const {strBadge, strYoutube, strTwitter, strFacebook, strFanart2} = league;
+
+    const leagueDetailsBannerStyle = {
+        width: "100%",
+        height: "300px",
+        backgroundImage: `url(${strFanart2})`,
+        // backgroundColor: "black",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100% 100%"
+    };
 
 
     return (
         <div>
-            <div className='cover-img mb-5 d-flex justify-content-center align-items-center'>
+            <div style={leagueDetailsBannerStyle} className=' mb-5 d-flex justify-content-center align-items-center'>
                 <img className='thumb-img img-fluid' src={strBadge} alt=""/>
             </div>
 
@@ -37,10 +46,13 @@ const LeagueDetails = () => {
                     <br/>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat mollitia magni optio saepe incidunt illum expedita itaque minus nam corporis ducimus excepturi vel aperiam inventore hic quis placeat nihil blanditiis quibusdam, perspiciatis porro fugiat culpa laborum. Velit, earum mollitia! Aliquam tenetur at ab tempora voluptatum perspiciatis, asperiores temporibus quae aut adipisci error laboriosam debitis corporis ducimus sequi? Fuga, iste consectetur.</p>
                 </div><br/>
-                <div className="text-center socialIcon mb-5">
-                    <img onClick={()=>window.open(`https://${strTwitter}`)} src={twitterLogo} alt=""/>
-                    <img onClick={()=>window.open(`https://${strFacebook}`)} src={facebookLogo} alt=""/>
-                    <img onClick={()=>window.open(`https://${strYoutube}`)} src={youtubeLogo} alt=""/>
+                <div className=" d-flex justify-content-center aling-item-center socialIcon mb-5">
+                    <h1 style={{color:"#00ACEE"}} onClick={()=>window.open(`https://${strTwitter}`)}><FontAwesomeIcon icon={faTwitterSquare} /></h1>
+
+                    <h1 style={{color:"#3b5998"}} onClick={()=>window.open(`https://${strFacebook}`)}><FontAwesomeIcon icon={faFacebook} /></h1>
+
+                    <h1 style={{color:"#c4302b"}} onClick={()=>window.open(`https://${strYoutube}`)}><FontAwesomeIcon icon={faYoutube} /></h1>
+                    
                 </div>
 
             </div>
