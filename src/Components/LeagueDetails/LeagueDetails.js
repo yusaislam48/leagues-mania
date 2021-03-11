@@ -19,13 +19,12 @@ const LeagueDetails = () => {
     }, [leagueId]);
 
     // strSport, intFormedYear, , strCountry, strFacebook, strTwitter, strYoutube,
-    const {strBadge, strYoutube, strTwitter, strFacebook, strFanart2} = league;
+    const {strBadge, strYoutube, strTwitter, strFacebook, strBanner} = league;
 
     const leagueDetailsBannerStyle = {
         width: "100%",
         height: "300px",
-        backgroundImage: `url(${strFanart2})`,
-        // backgroundColor: "black",
+        backgroundImage: `url(${strBanner})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 100%"
     };
@@ -34,7 +33,9 @@ const LeagueDetails = () => {
     return (
         <div>
             <div style={leagueDetailsBannerStyle} className=' mb-5 d-flex justify-content-center align-items-center'>
-                <img className='thumb-img img-fluid' src={strBadge} alt=""/>
+                {/* <div className="thumb-img-div"> */}
+                    <img className='thumb-img img-fluid' src={strBadge} alt=""/>
+                {/* </div> */}
             </div>
 
             <div className="container ">

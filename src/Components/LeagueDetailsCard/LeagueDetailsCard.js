@@ -22,12 +22,12 @@ const LeagueDetailsCard = (props) => {
           </div>
 
           {
-              strGender === "Female"
+              strGender === "Male"
                 ?<div className="col-md-5">
-                  <img style={{width:"100%"}} src={feMalePhoto} alt="..."/>
+                  <img style={{width:"100%"}} src={malePhoto} alt="..."/>
                 </div>
                 :<div className="col-md-5">
-                  <img style={{width:"100%"}} src={malePhoto} alt="..."/>
+                  <img style={{width:"100%"}} src={feMalePhoto} alt="..."/>
                 </div>
           }
 
