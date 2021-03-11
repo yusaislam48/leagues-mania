@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Leagues from '../League/Leagues';
+import Leagues from '../Leagues/Leagues';
 import './Home.css';
 
 const Home = () => {
